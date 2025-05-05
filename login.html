@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+  background-color: darkseagreen;
+    }
+    h1 {
+  color: olive drab;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+body {
+    font-family: verdana;
+    background-color: darkseagrean;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%;
+    margin: 50px auto;
+    background-color: olivedrab;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+button {
+    width: 25%;
+    padding: 15px;
+    background-color: darkslategray;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkslategray;
+}
+
+a {
+    text-decoration: none;
+    color: darkslateblue;
+    display: block;
+    text-align: center;
+    margin-top: 300px;
+}
+
+a:hover {
+    color: darkslategray;
+}
+
+</style>  
+</head>
+<body>
+<h1>Welcome To Babyrhino Trade-in center</h1>
+<p><em>Where opportunity meets satisfaction.</em></p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.T-IN MOTORS</title>
+</head>
+</body>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm" method="POST" action="login.php">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+    <div id="message"></div>
+    <script>
+        // Optional: Simple client-side validation
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (!username || !password) {
+                document.getElementById('message').textContent = 'Please enter username and password.';
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dynamic Time Page</title>
+  <style>
+    body {
+      font-family: cursive, sans-serif;
+      text-align: center;
+      transition: background-color 0.5s, color 0.2s;
+      padding: 50px;
+    }
+
+    #time {
+      font-size: 5em;
+      margin-bottom: 500px;
+    }
+
+    .light-mode {
+      background-color: #f0f0f0;
+      color: #000000;
+    }
+
+    .dark-mode {
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="time">--:--:--</div>
+  <button onclick="toggleMode()">Change Light or Dark</button>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString();
+      document.getElementById('time').textContent = timeString;
+      setBackgroundByTime(now.getHours());
+    }
+
+    function setBackgroundByTime(hour) {
+      const body = document.body;
+      if (!body.classList.contains('dark-mode')) {
+        if (hour >= 5 && hour < 12) {
+          body.style.backgroundColor = '#FFFAE5'; 
+        } else if (hour >= 12 && hour < 18) {
+          body.style.backgroundColor = '#E5F4FF'; 
+        } else {
+          body.style.backgroundColor = '#DDEEFF'; 
+        }
+      }
+    }
+
+    function toggleMode() {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+    }
+
+    
+    document.body.classList.add('light-mode');
+    updateTime();
+    setInterval(updateTime, 1000);
+  </script>
+</body>
+</html>
